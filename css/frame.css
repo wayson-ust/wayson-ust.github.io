@@ -344,8 +344,8 @@ ol.publication {
     display: flex;
     flex-direction: column-reverse;
     list-style: none;
-    margin: 7px 0 7px 0;
-    padding: 0;
+    margin: 7px 0 7px 0px;
+    padding: 10px;
     flex-wrap: wrap;
 }
 
@@ -365,6 +365,7 @@ ol.publication li {
     align-items: baseline;
     margin: 0;
     padding: 0;
+    /*padding-left:20px;*/
 }
 
 
@@ -372,6 +373,7 @@ ol.publication li {
 ol.publication li p:before {
     line-height: 1;
     margin-right: 5px;
+    list-style-position: inside;
 }
 
 ol.publication.C-list {
