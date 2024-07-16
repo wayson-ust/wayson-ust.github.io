@@ -57,10 +57,10 @@ h3 {
 }
 
 ul,
-ol {
-    margin: 10px 0 10px 0;
-    padding: 10;
-}
+/*ol {*/
+/*    margin: 10px 0 10px 0;*/
+/*    padding: 10;*/
+/*}*/
 
 li ol,
 li ul {
@@ -340,13 +340,30 @@ li ul {
     max-width: 140px;
 }
 
+ol.my_pub {
+    display: flex;
+    counter-reset: C-counter;
+}
+
+ol.my_pub li p {
+    counter-increment: C-counter;
+}
+
+ol.my_pub li p:before {
+    line-height: 1;
+    margin-right: 5px;
+    content: "["counter(C-counter)"]";
+}
+
 ol.publication {
     display: flex;
     flex-direction: column-reverse;
-    list-style: none;
-    margin: 7px 0 7px 0px;
+    /*list-style: none;*/
+    margin: 0px 0px 0px 0px;
     padding: 10px;
     flex-wrap: wrap;
+    list-style-position: outside;
+    counter-reset: C-counter;
 }
 
 ul.edu {
@@ -362,31 +379,24 @@ ul.edu {
 
 ol.publication li {
     display: flex;
-    align-items: baseline;
+    /*align-items: baseline;*/
+    /*list-style-position: inside;*/
     margin: 0;
     padding: 0;
     /*padding-left:20px;*/
+    /*list-style-position: outside;*/
 }
 
-
+ol.publication li p {
+    counter-increment: C-counter;
+}
 
 ol.publication li p:before {
     line-height: 1;
     margin-right: 5px;
-    list-style-position: inside;
+    content: "["counter(C-counter)"]";
 }
 
-ol.publication.C-list {
-    counter-reset: C-counter;
-}
-
-ol.publication.C-list li p {
-    counter-increment: C-counter;
-}
-
-ol.publication.C-list li p:before {
-    content: "[会议 "counter(C-counter)"]";
-}
 
 ol.publication.C-list-en {
     counter-reset: C-en-counter;
@@ -402,14 +412,17 @@ ol.publication.C-list-en li p:before {
 
 ol.publication.Pr-list-en {
     counter-reset: C-en-counter;
+    list-style-position: outside;
 }
 
 ol.publication.Pr-list-en li p {
     counter-increment: C-en-counter;
+    list-style-position: outside;
 }
 
 ol.publication.Pr-list-en li p:before {
     content: "["counter(C-en-counter)"]";
+    list-style-position: outside;
 }
 
 ol.publication.J-list {
@@ -557,7 +570,7 @@ ol.publication.A-list-en li p:before {
 }
 
 ol.nested {
-    list-style: none;
+    /*list-style: none;*/
     counter-reset: item;
 }
 
