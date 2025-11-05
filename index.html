@@ -19,6 +19,18 @@
             opacity: 1 !important;
             font-weight: 700 !important;
         }
+        /* Publications numbering */
+        #publications-list {
+            counter-reset: pub-counter;
+        }
+        #publications-list .paper {
+            counter-increment: pub-counter;
+            position: relative;
+        }
+        #publications-list .paper > p::before {
+            content: counter(pub-counter) ". ";
+            /* font-weight: bold; */
+        }
         div.paper {
             clear: both;
             margin-top: 0.4em;
@@ -173,6 +185,7 @@
 
                     
 
+                    <div id="publications-list">
                     <div class="paper">
                         <p><a href="papers/tpami2025.pdf"><b>MTMamba++: Enhancing Multi-Task Dense Scene Understanding via Mamba-Based Decoders</b></a><br>
                             Baijiong Lin, <b><u>Weisen Jiang</u></b>, Pengguang Chen, Shu Liu, Ying-Cong Chen <br>
@@ -334,6 +347,8 @@
                             <br>
                             Chinese Control Conference (CCC) 2014<br>
                         </p>
+                    </div>
+
                     </div>
 
                     <h2 class="add-top-margin">Patents</h2>
