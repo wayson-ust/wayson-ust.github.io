@@ -55,7 +55,40 @@
         b, strong {
             font-weight: bold;
             opacity: 1 !important;
-    }
+        }
+
+        .publication-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.2rem 0 0.8rem;
+        }
+
+        .publication-toggle {
+            border: 1px solid #1a73e8;
+            background-color: transparent;
+            color: inherit;
+            padding: 0.35rem 0.95rem;
+            border-radius: 999px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .publication-toggle:hover,
+        .publication-toggle:focus {
+            background-color: rgba(26, 115, 232, 0.1);
+        }
+
+        .publication-toggle.active {
+            background-color: #1a73e8;
+            color: #ffffff;
+        }
+
+        .publication-toggle:focus-visible {
+            outline: 2px solid #1a73e8;
+            outline-offset: 2px;
+        }
     </style>
 </head>
 
@@ -181,11 +214,25 @@
             <div class="flex-row">
                 <div class="flex-item flex-column">
                     <h2 class="add-top-margin">Publications</h2>
-                    <p>(&spades; equal contribution)</p>
+                    <p>(&spades; equal contribution, &#x1F4E7; corresponding author)</p>
 
-                    
+                    <div class="publication-controls">
+                        <button type="button" class="publication-toggle active" data-filter="selected">Selected papers</button>
+                        <button type="button" class="publication-toggle" data-filter="all">All papers</button>
+                    </div>
 
                     <div id="publications-list">
+
+                    <div class="paper">
+                        <p><a href="https://arxiv.org/abs/2308.12029"><b>Dual-Balancing for Multi-Task Learning</b></a><br>
+                            Baijiong Lin, <b><u>Weisen Jiang</u></b>, P. Chen, F. Ye, Yu Zhang, Y. Chen, S. Liu, Ivor W. Tsang, James T. Kwok  <br>
+                            Neural Networks, 2025<br>
+                            <!-- <a href="https://ieeexplore.ieee.org/document/11098990">IEEE Xplore</a> -->
+                            <a href="https://github.com/median-research-group/LibMTL">Code</a>
+                        </p>
+                    </div>
+
+
                     <div class="paper">
                         <p><a href="papers/tpami2025.pdf"><b>MTMamba++: Enhancing Multi-Task Dense Scene Understanding via Mamba-Based Decoders</b></a><br>
                             Baijiong Lin, <b><u>Weisen Jiang</u></b>, Pengguang Chen, Shu Liu, Ying-Cong Chen <br>
@@ -214,7 +261,7 @@
                         </p>
                     </div>
 
-                    <div class="paper">
+                    <div class="paper selected">
                         <p><a href="papers/nips2024a.pdf"><b>RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models</b></a><br>
                             Shuhao Chen<sup>&spades;</sup>, <b><u>Weisen Jiang</u></b><sup>&spades;</sup>, Baijiong Lin, James T. Kwok, Yu Zhang<br>
                             NeurIPS 2024, Vancouver, Canada <br>
@@ -224,10 +271,10 @@
                         </p>
                     </div>
 
-                    <div class="paper">
+                    <div class="paper selected">
                         <p><a href="papers/nips2024b.pdf"><b>GITA: Graph to Visual and Textual Integration for Vision-Language Graph Reasoning
 </b></a><br>
-                            Yanbin Wei, Shuai Fu, <b><u>Weisen Jiang</u></b>, Zejian Zhang, Zhixiong Zeng, Qi Wu, James T. Kwok, Yu Zhang<br>
+                            Yanbin Wei, Shuai Fu, <b><u>Weisen Jiang</u></b><sup>&#x1F4E7;</sup>, Zejian Zhang, Zhixiong Zeng, Qi Wu, James T. Kwok, Yu Zhang<br>
                             NeurIPS 2024, Vancouver, Canada <br>
                             <a href="https://openreview.net/forum?id=SaodQ13jga">OpenReview</a>
                             | <a href="https://v-graph.github.io/">Project</a>
@@ -257,7 +304,7 @@
                         </p>
                     </div>
 
-                    <div class="paper">
+                    <div class="paper selected">
                         <p><a href="papers/acl2024.pdf"><b>Forward-Backward Reasoning in Large Language Models for Mathematical Verification</b></a><br>
                             <b><u>Weisen Jiang</u></b>, Han Shi, Longhui Yu, Zhengying Liu, Yu Zhang, Zhenguo Li, James Kwok<br>
                             Findings of ACL 2024, Bangkok, Thailand<br>
@@ -267,7 +314,7 @@
                         </p>
                     </div>
 
-                    <div class="paper">
+                    <div class="paper selected">
                         <p><a href="papers/iclr2024.pdf"><b>MetaMath: Bootstrap Your Own Mathematical Questions for Large Language Models</b></a><br>
                             Longhui Yu<sup>&spades;</sup>, <b><u>Weisen Jiang</u></b><sup>&spades;</sup>, Han Shi, J. Yu, Z. Liu, Yu Zhang, James Kwok, Zhenguo Li, A. Weller, Weiyang Liu
                             <br>
@@ -288,7 +335,7 @@
                     </div>
 
 
-                    <div class="paper">
+                    <div class="paper selected">
                         <p><a href="papers/icml2023.pdf"><b>Effective Structured Prompting by Meta-Learning and Representative Verbalizer</b></a><br>
                              <b><u>Weisen Jiang</u></b>, Yu Zhang, James Kwok
                             <br>
@@ -300,7 +347,7 @@
                         </p>
                     </div>
 
-                    <div class="paper">
+                    <div class="paper selected">
                         <p><a href="papers/iclr2023.pdf"><b>An Adaptive Policy to Employ Sharpness-Aware Minimization</b></a><br>
                              <b><u>Weisen Jiang</u></b>, Hansi Yang, Yu Zhang, James Kwok
                             <br>
@@ -311,7 +358,7 @@
                         </p>
                     </div>
 
-                    <div class="paper">
+                    <div class="paper selected">
                         <p><a href="papers/icml2022.pdf"><b>Subspace Learning for Effective Meta-Learning</b></a><br>
                              <b><u>Weisen Jiang</u></b>, Yu Zhang, James Kwok
                             <br>
@@ -322,7 +369,7 @@
                         </p>
                     </div>
 
-                    <div class="paper">
+                    <div class="paper selected">
                         <p><a href="papers/nips2021.pdf"><b>Effective Meta-Regularization by Kernelized Proximal Regularization</b></a><br>
                              <b><u>Weisen Jiang</u></b>, James Kwok, Yu Zhang
                             <br>
@@ -353,7 +400,7 @@
 
                     <h2 class="add-top-margin">Patents</h2>
 
-                    <div class="paper">
+                    <div class="paper selected">
                         <p><a href="papers/patent2018.pdf"><b>信息推荐方法、装置、系统及存储介质</b></a><br>
                             <b><u>江伟森</u></b>, 吴德龙, 邱泰生
                             <br>
@@ -361,7 +408,7 @@
                             发明专利, 授权号: CN110413868B, 2023
                         </p>
                     </div>
-                    <div class="paper">
+                    <div class="paper selected">
                         <p><a href="papers/patent2019.pdf"><b>	一种页面生成方法及装置</b></a><br>
                             <b><u>江伟森</u></b>, 骆顺昌, 吴德龙, 邱泰生
                             <br>
@@ -470,6 +517,45 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggleButtons = document.querySelectorAll('.publication-toggle');
+        const publicationsList = document.querySelector('#publications-list');
+
+        if (!toggleButtons.length || !publicationsList) {
+            return;
+        }
+
+        const papers = Array.from(publicationsList.querySelectorAll('.paper'));
+
+        function filterPublications(filter) {
+            papers.forEach(function (paper) {
+                const shouldShow = filter === 'all' || paper.classList.contains('selected');
+                paper.style.display = shouldShow ? '' : 'none';
+            });
+        }
+
+        // Initialize with the active button's filter
+        const activeButton = Array.from(toggleButtons).find(function (btn) {
+            return btn.classList.contains('active');
+        });
+        if (activeButton) {
+            filterPublications(activeButton.dataset.filter);
+        }
+
+        toggleButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                toggleButtons.forEach(function (btn) {
+                    btn.classList.remove('active');
+                });
+
+                button.classList.add('active');
+                filterPublications(button.dataset.filter);
+            });
+        });
+    });
+</script>
 </body>
 
 </html>
