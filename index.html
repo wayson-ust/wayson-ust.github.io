@@ -89,6 +89,48 @@
             outline: 2px solid #1a73e8;
             outline-offset: 2px;
         }
+
+        .section-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .section-toggle {
+            border: 1px solid #555;
+            background-color: transparent;
+            color: inherit;
+            padding: 0.4rem 1.2rem;
+            border-radius: 999px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .section-toggle:hover,
+        .section-toggle:focus {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .section-toggle.active {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        #patents-section .paper {
+            background-color: transparent;
+            padding-left: 0;
+            padding-right: 0;
+        }
     </style>
 </head>
 
@@ -105,15 +147,13 @@
                     <!--          <p style="text-align: left"> <a href="index.html">English</a> | <a href="index_zh.html">中文</a></p>-->
                     <p class="text">
                         Researcher<br>
-                        waysonkong@gmail.com (WeChat: WesonJiang)<br>
+                        waysonkong@gmail.com<br>
                         Department of Computer Science and Engineering <br>
-                        The Chinese University of Hong Kong (CUHK) <br><br>
+                        Chinese University of Hong Kong (CUHK) <br><br>
                         Research Interests: large language models, deep learning, machine learning<br>
                         <a href="https://scholar.google.com/citations?hl=en&user=yr64lTYAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a>
                         |
                         <a href="https://openreview.net/profile?id=~Weisen_Jiang1">OpenReview</a>
-                        |
-                        <a href="https://aipapers-top.github.io/">AI-TOP</a>
                         <br>
                     </p>
                 </div>
@@ -154,322 +194,336 @@
             <!--Start EDU-->
             <div class="flex-row">
                 <div class="flex-item flex-column">
-                    <h2 class="add-top-margin">Education</h2>
-                    <!--          &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-                    <ul class="edu">
-                        <li>
-                            <p class="text-small-margin">
-                                South China University of Technology, B.Eng. 2008 - 2012.
-                            </p>
-                        </li>
-                        <li>
-                            <p class="text-small-margin">
-                                University of Chinese Academy of Sciences, M.Sc. (advisor: <a href="http://lsc.amss.ac.cn/~htfang/index.html">Prof. Hai-Tao Fang</a>). 2012 - 2015.
-                            </p>
-                        </li>
-                        <li>
-                            <p class="text-small-margin">
-                                Hong Kong University of Science and Technology, Ph.D. (advisors: <a href="https://www.cse.ust.hk/~jamesk/">Prof. James Kwok</a>
-                                and <a href="https://yuzhanghk.github.io/">Yu Zhang</a>). 2020 - 2024. (<a href="./papers/thesis.pdf">thesis</a>)
-                            </p>
-                        </li>
-                    </ul>
+                    <div class="section-controls">
+                        <button type="button" class="section-toggle active" data-target="background-section">Background</button>
+                        <button type="button" class="section-toggle" data-target="publications-section">Publications</button>
+                        <button type="button" class="section-toggle" data-target="patents-section">Patents</button>
+                        <button type="button" class="section-toggle" data-target="awards-section">Awards</button>
+                        <button type="button" class="section-toggle" data-target="teaching-section">Teaching</button>
+                    </div>
                 </div>
             </div>
-            <!--End EDU-->
 
-            <!--Start Work-->
-            <div class="flex-row">
-                <div class="flex-item flex-column">
-                    <h2 class="add-top-margin">Work</h2>
-                    <!--          &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-                    <ul class="edu">
-                        <li>
-                            <p class="text-small-margin">
-                                Meituan, Engineer. 2015 - 2017. <br>
-                                (i) recommendation systems and algorithms (ii) anti-cheating systems
-                            </p>
-                        </li>
-                        <li>
-                            <p class="text-small-margin">
-                                Tencent, Senior Engineer. 2017 - 2019.
-                                <br> (i) recommendation systems and algorithms (ii) big-data platforms
-                            </p>
-                        </li>
-                        <li>
-                            <p class="text-small-margin">
-                                CUHK, Researcher. 2024 - now.
-                            </p>
-                        </li>
-                    </ul>
+            <div id="background-section" class="content-section active">
+                <div class="flex-row">
+                    <div class="flex-item flex-column">
+                        <h2 class="add-top-margin">Education</h2>
+                        <ul class="edu">
+                            <li>
+                                <p class="text-small-margin">
+                                    South China University of Technology, B.Eng. 2008 - 2012.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="text-small-margin">
+                                    University of Chinese Academy of Sciences, M.Sc. (advisor: <a href="http://lsc.amss.ac.cn/~htfang/index.html">Prof. Hai-Tao Fang</a>). 2012 - 2015.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="text-small-margin">
+                                    Hong Kong University of Science and Technology, Ph.D. (advisors: <a href="https://www.cse.ust.hk/~jamesk/">Prof. James Kwok</a>
+                                    and <a href="https://yuzhanghk.github.io/">Yu Zhang</a>). 2020 - 2024. (<a href="./papers/thesis.pdf">thesis</a>)
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex-row">
+                    <div class="flex-item flex-column">
+                        <h2 class="add-top-margin">Work</h2>
+                        <ul class="edu">
+                            <li>
+                                <p class="text-small-margin">
+                                    Meituan, Engineer. 2015 - 2017. <br>
+                                    (i) recommendation systems and algorithms (ii) anti-cheating systems
+                                </p>
+                            </li>
+                            <li>
+                                <p class="text-small-margin">
+                                    Tencent, Senior Engineer. 2017 - 2019.
+                                    <br> (i) recommendation systems and algorithms (ii) big-data platforms
+                                </p>
+                            </li>
+                            <li>
+                                <p class="text-small-margin">
+                                    CUHK, Researcher. 2024 - now.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <!--End Work-->
+
+            <div id="publications-section" class="content-section">
+                <div class="flex-row">
+                    <div class="flex-item flex-column">
+                        <!-- <h2 class="add-top-margin">Papers</h2> -->
+                        <p>(&spades; equal contribution, &#x1F4E7; corresponding author)</p>
+                        <div class="publication-controls">
+                            <button type="button" class="publication-toggle active" data-filter="selected">Selected papers</button>
+                            <button type="button" class="publication-toggle" data-filter="all">All papers</button>
+                        </div>
+                        
+                        <div id="publications-list">
+
+                        <div class="paper">
+                            <p><a href="https://arxiv.org/abs/2308.12029"><b>Dual-Balancing for Multi-Task Learning</b></a><br>
+                                Baijiong Lin, <b><u>Weisen Jiang</u></b>, P. Chen, F. Ye, Yu Zhang, Y. Chen, S. Liu, Ivor W. Tsang, James T. Kwok  <br>
+                                Neural Networks, 2025<br>
+                                <!-- <a href="https://ieeexplore.ieee.org/document/11098990">IEEE Xplore</a> -->
+                                <a href="https://github.com/median-research-group/LibMTL">Code</a>
+                            </p>
+                        </div>
 
 
+                        <div class="paper">
+                            <p><a href="papers/tpami2025.pdf"><b>MTMamba++: Enhancing Multi-Task Dense Scene Understanding via Mamba-Based Decoders</b></a><br>
+                                Baijiong Lin, <b><u>Weisen Jiang</u></b>, Pengguang Chen, Shu Liu, Ying-Cong Chen <br>
+                                IEEE TPAMI, 2025<br>
+                                <a href="https://ieeexplore.ieee.org/document/11098990">IEEE Xplore</a>
+                                | <a href="https://github.com/EnVision-Research/MTMamba">Code</a>
+                            </p>
+                        </div>
 
-            <!--Start publication-->
+                        <div class="paper">
+                            <p><a href="papers/icml2025.pdf"><b>PARM: Multi-Objective Test-Time Alignment via Preference-Aware Autoregressive Reward Model</b></a><br>
+                                Baijiong Lin, <b><u>Weisen Jiang</u></b>, Yuancheng Xu, Hao Chen, Ying-Cong Chen<br>
+                                ICML 2025, Vancouver, Canada<br>
+                                <a href="https://openreview.net/forum?id=zm53HtGiXN">OpenReview</a>
+                               | <a href="https://github.com/Baijiong-Lin/PARM">Code</a>
+                               | <a href="./papers/icml2025_poster.pdf">Poster</a>
+                            </p>
+                        </div>
 
+                        <div class="paper">
+                            <p><a href="papers/nn2025.pdf"><b>Domain-Guided Conditional Diffusion Model for Unsupervised Domain Adaptation</b></a><br>
+                                Yulong Zhang, Shuhao Chen, <b><u>Weisen Jiang</u></b>, Yu Zhang, Jiangang Lu, James Kwok<br>
+                                Neural Networks, 2025<br>
+                                <a href="https://www.sciencedirect.com/science/article/pii/S0893608024009602">ScienceDirect</a>
+                               | <a href="https://github.com/zhangyl660/DCDM">Code</a>
+                            </p>
+                        </div>
 
-            <div class="flex-row">
-                <div class="flex-item flex-column">
-                    <h2 class="add-top-margin">Publications</h2>
-                    <p>(&spades; equal contribution, &#x1F4E7; corresponding author)</p>
+                        <div class="paper selected">
+                            <p><a href="papers/nips2024a.pdf"><b>RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models</b></a><br>
+                                Shuhao Chen<sup>&spades;</sup>, <b><u>Weisen Jiang</u></b><sup>&spades;</sup>, Baijiong Lin, James T. Kwok, Yu Zhang<br>
+                                NeurIPS 2024, Vancouver, Canada <br>
+                                <a href="https://openreview.net/forum?id=7RQvjayHrM">OpenReview</a>
+                                | <a href="https://github.com/shuhao02/RouterDC">Code</a>
+                                | <a href="papers/nips2024a_poster.pdf">Poster</a>
+                            </p>
+                        </div>
 
-                    <div class="publication-controls">
-                        <button type="button" class="publication-toggle active" data-filter="selected">Selected papers</button>
-                        <button type="button" class="publication-toggle" data-filter="all">All papers</button>
-                    </div>
-
-                    <div id="publications-list">
-
-                    <div class="paper">
-                        <p><a href="https://arxiv.org/abs/2308.12029"><b>Dual-Balancing for Multi-Task Learning</b></a><br>
-                            Baijiong Lin, <b><u>Weisen Jiang</u></b>, P. Chen, F. Ye, Yu Zhang, Y. Chen, S. Liu, Ivor W. Tsang, James T. Kwok  <br>
-                            Neural Networks, 2025<br>
-                            <!-- <a href="https://ieeexplore.ieee.org/document/11098990">IEEE Xplore</a> -->
-                            <a href="https://github.com/median-research-group/LibMTL">Code</a>
-                        </p>
-                    </div>
-
-
-                    <div class="paper">
-                        <p><a href="papers/tpami2025.pdf"><b>MTMamba++: Enhancing Multi-Task Dense Scene Understanding via Mamba-Based Decoders</b></a><br>
-                            Baijiong Lin, <b><u>Weisen Jiang</u></b>, Pengguang Chen, Shu Liu, Ying-Cong Chen <br>
-                            IEEE TPAMI, 2025<br>
-                            <a href="https://ieeexplore.ieee.org/document/11098990">IEEE Xplore</a>
-                            | <a href="https://github.com/EnVision-Research/MTMamba">Code</a>
-                        </p>
-                    </div>
-
-                    <div class="paper">
-                        <p><a href="papers/icml2025.pdf"><b>PARM: Multi-Objective Test-Time Alignment via Preference-Aware Autoregressive Reward Model</b></a><br>
-                            Baijiong Lin, <b><u>Weisen Jiang</u></b>, Yuancheng Xu, Hao Chen, Ying-Cong Chen<br>
-                            ICML 2025, Vancouver, Canada<br>
-                            <a href="https://openreview.net/forum?id=zm53HtGiXN">OpenReview</a>
-                           | <a href="https://github.com/Baijiong-Lin/PARM">Code</a>
-                           | <a href="./papers/icml2025_poster.pdf">Poster</a>
-                        </p>
-                    </div>
-
-                    <div class="paper">
-                        <p><a href="papers/nn2025.pdf"><b>Domain-Guided Conditional Diffusion Model for Unsupervised Domain Adaptation</b></a><br>
-                            Yulong Zhang, Shuhao Chen, <b><u>Weisen Jiang</u></b>, Yu Zhang, Jiangang Lu, James Kwok<br>
-                            Neural Networks, 2025<br>
-                            <a href="https://www.sciencedirect.com/science/article/pii/S0893608024009602">ScienceDirect</a>
-                           | <a href="https://github.com/zhangyl660/DCDM">Code</a>
-                        </p>
-                    </div>
-
-                    <div class="paper selected">
-                        <p><a href="papers/nips2024a.pdf"><b>RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models</b></a><br>
-                            Shuhao Chen<sup>&spades;</sup>, <b><u>Weisen Jiang</u></b><sup>&spades;</sup>, Baijiong Lin, James T. Kwok, Yu Zhang<br>
-                            NeurIPS 2024, Vancouver, Canada <br>
-                            <a href="https://openreview.net/forum?id=7RQvjayHrM">OpenReview</a>
-                            | <a href="https://github.com/shuhao02/RouterDC">Code</a>
-                            | <a href="papers/nips2024a_poster.pdf">Poster</a>
-                        </p>
-                    </div>
-
-                    <div class="paper selected">
-                        <p><a href="papers/nips2024b.pdf"><b>GITA: Graph to Visual and Textual Integration for Vision-Language Graph Reasoning
+                        <div class="paper selected">
+                            <p><a href="papers/nips2024b.pdf"><b>GITA: Graph to Visual and Textual Integration for Vision-Language Graph Reasoning
 </b></a><br>
-                            Yanbin Wei, Shuai Fu, <b><u>Weisen Jiang</u></b><sup>&#x1F4E7;</sup>, Zejian Zhang, Zhixiong Zeng, Qi Wu, James T. Kwok, Yu Zhang<br>
-                            NeurIPS 2024, Vancouver, Canada <br>
-                            <a href="https://openreview.net/forum?id=SaodQ13jga">OpenReview</a>
-                            | <a href="https://v-graph.github.io/">Project</a>
-                            | <a href="papers/nips2024b_poster.png">Poster</a>
-                        </p>
-                    </div>
-
-
-                    <div class="paper">
-                        <p><a href="papers/eccv2024b.pdf"><b>MTMamba: Enhancing Multi-Task Dense Scene Understanding by Mamba-Based Decoders</b></a><br>
-                            Baijiong Lin, <b><u>Weisen Jiang</u></b>, Pengguang Chen, Yu Zhang, Shu Liu, Ying-Cong Chen <br>
-                            ECCV 2024, Milano, Italy<br>
-                            <a href="https://arxiv.org/abs/2407.02228">arXiv</a>
-                            | <a href="https://github.com/EnVision-Research/MTMamba">Code</a>
-                            | <a href="papers/eccv2024b_poster.pdf">Poster</a>
-                            | Follow-up work: <a href="https://arxiv.org/abs/2408.15101">MTMamba++</a>
-                        </p>
-                    </div>
-
-                    <div class="paper">
-                        <p><a href="papers/eccv2024a.pdf"><b>Learning Scalable Model Soup on a Single GPU: An Efficient Subspace Training Strategy</b></a><br>
-                            Tao Li<sup>&spades;</sup>, <b><u>Weisen Jiang</u></b><sup>&spades;</sup>, Fanghui Liu, Xiaolin Huang, James Kwok <br>
-                            ECCV 2024, Milano, Italy<br>
-                            <a href="https://arxiv.org/abs/2407.03641">arXiv</a>
-                            | <a href="https://github.com/nblt/MEHL-Soup">Code</a>
-                            | <a href="papers/eccv2024a_poster.jpg">Poster</a>
-                        </p>
-                    </div>
-
-                    <div class="paper selected">
-                        <p><a href="papers/acl2024.pdf"><b>Forward-Backward Reasoning in Large Language Models for Mathematical Verification</b></a><br>
-                            <b><u>Weisen Jiang</u></b>, Han Shi, Longhui Yu, Zhengying Liu, Yu Zhang, Zhenguo Li, James Kwok<br>
-                            Findings of ACL 2024, Bangkok, Thailand<br>
-                            <a href="https://arxiv.org/abs/2308.07758">arXiv</a>
-                            | <a href="https://github.com/ws-jiang/fobar-public">Code</a>
-                            | <a href="https://llm-fobar.github.io/">Project</a>
-                        </p>
-                    </div>
-
-                    <div class="paper selected">
-                        <p><a href="papers/iclr2024.pdf"><b>MetaMath: Bootstrap Your Own Mathematical Questions for Large Language Models</b></a><br>
-                            Longhui Yu<sup>&spades;</sup>, <b><u>Weisen Jiang</u></b><sup>&spades;</sup>, Han Shi, J. Yu, Z. Liu, Yu Zhang, James Kwok, Zhenguo Li, A. Weller, Weiyang Liu
-                            <br>
-                            ICLR 2024, <t style="color:MediumSeaGreen;"> Spotlight (acceptance rate 5%)</t>, Vienna, Austria<br>
-                            <a href="https://openreview.net/forum?id=N8N0hgNDRt">OpenReview</a>&nbsp;|&nbsp;
-                            <a href="https://github.com/meta-math/MetaMath">Code</a>&nbsp;|&nbsp;
-                            <a href="https://meta-math.github.io/">Project</a>&nbsp;|&nbsp;
-                            <a href="papers/iclr2024_poster.pdf">Poster</a>
-                        </p>
-                    </div>
-
-                    <div class="paper">
-                        <p><a href="papers/ecml2024.pdf"><b>Enhancing Sharpness-Aware Minimization by Learning Perturbation Radius</b></a><br>
-                            Xuehao Wang<sup>&spades;</sup>, <b><u>Weisen Jiang</u></b><sup>&spades;</sup>, Shuai Fu, and Yu Zhang <br>
-                            ECML 2024, Vilnius, Lithuania<br>
-                            <a href="https://arxiv.org/abs/2408.08222">arXiv</a>
-                        </p>
-                    </div>
-
-
-                    <div class="paper selected">
-                        <p><a href="papers/icml2023.pdf"><b>Effective Structured Prompting by Meta-Learning and Representative Verbalizer</b></a><br>
-                             <b><u>Weisen Jiang</u></b>, Yu Zhang, James Kwok
-                            <br>
-                            ICML 2023, Honolulu, Hawaii, USA<br>
-                            <a href="https://openreview.net/forum?id=BLz4inIrHl">OpenReview</a>&nbsp;|&nbsp;
-                            <a href="https://drive.google.com/file/d/1TEbEJQOVIK2Zd78TXlYoehoQ7cVAgB_x/view?usp=sharing">Code</a>
-                            | <a href="papers/icml2023_poster.pdf">Poster</a>
-
-                        </p>
-                    </div>
-
-                    <div class="paper selected">
-                        <p><a href="papers/iclr2023.pdf"><b>An Adaptive Policy to Employ Sharpness-Aware Minimization</b></a><br>
-                             <b><u>Weisen Jiang</u></b>, Hansi Yang, Yu Zhang, James Kwok
-                            <br>
-                            ICLR 2023, Kigali, Rwanda<br>
-                            <a href="https://openreview.net/forum?id=6Wl7-M2BC-">OpenReview</a>&nbsp;|&nbsp;
-                            <a href="https://drive.google.com/file/d/1TckN8KybYd8JjJpGI3iQ6_ZODhgdO3br/view?usp=sharing">Code</a>
-                            | <a href="papers/iclr2023_poster.pdf">Poster</a>
-                        </p>
-                    </div>
-
-                    <div class="paper selected">
-                        <p><a href="papers/icml2022.pdf"><b>Subspace Learning for Effective Meta-Learning</b></a><br>
-                             <b><u>Weisen Jiang</u></b>, Yu Zhang, James Kwok
-                            <br>
-                            ICML 2022, Baltimore, Maryland, USA<br>
-                            <a href="https://proceedings.mlr.press/v162/jiang22b.html">OpenReview</a> |
-                            <a>Code</a>
-                            | <a href="papers/icml2022_poster.pdf">Poster</a>
-                        </p>
-                    </div>
-
-                    <div class="paper selected">
-                        <p><a href="papers/nips2021.pdf"><b>Effective Meta-Regularization by Kernelized Proximal Regularization</b></a><br>
-                             <b><u>Weisen Jiang</u></b>, James Kwok, Yu Zhang
-                            <br>
-                            NeurIPS 2021, Virtual<br>
-                            <a href="https://openreview.net/forum?id=mekyxmlLJNd">OpenReview</a> |
-                            <a href="https://drive.google.com/file/d/1ZbIsaE0UdymVMwZHmgfjd5L4L2lw6hC-/view?usp=sharing">Code</a>
-                            | <a href="papers/nips2021_poster.pdf">Poster</a>
-                        </p>
-                    </div>
-
-                    <div class="paper">
-                        <p><a href="papers/ijcnn2021.pdf"><b>SEEN: Few-Shot Classification with SElf-ENsemble</b></a><br>
-                             <b><u>Weisen Jiang</u></b>, James Kwok, Yu Zhang
-                            <br>
-                            IJCNN 2021, Virtual<br>
-                        </p>
-                    </div>
-
-                    <div class="paper">
-                        <p><a href="papers/ccc2014.pdf"><b>Identification for Wiener System with Discontinuous Piece-wise Linear Function via Sparse Optimization</b></a><br>
-                             <b><u>Weisen Jiang</u></b>, Hai-Tao Fang
-                            <br>
-                            Chinese Control Conference (CCC) 2014<br>
-                        </p>
-                    </div>
-
-                    </div>
-
-                    <h2 class="add-top-margin">Patents</h2>
-
-                    <div class="paper selected">
-                        <p><a href="papers/patent2018.pdf"><b>信息推荐方法、装置、系统及存储介质</b></a><br>
-                            <b><u>江伟森</u></b>, 吴德龙, 邱泰生
-                            <br>
-                            腾讯科技有限公司<br>
-                            发明专利, 授权号: CN110413868B, 2023
-                        </p>
-                    </div>
-                    <div class="paper selected">
-                        <p><a href="papers/patent2019.pdf"><b>	一种页面生成方法及装置</b></a><br>
-                            <b><u>江伟森</u></b>, 骆顺昌, 吴德龙, 邱泰生
-                            <br>
-                            腾讯科技有限公司<br>
-                            发明专利, 授权号: CN112307319A, 2021
-                        </p>
-                    </div>
-
-
-                </div>
-            </div>
-            <!--End publication-->
-
-
-            <!--Start Awards and Honors-->
-            <div class="flex-row">
-                <div class="flex-item flex-column">
-                    <h2 class="add-top-margin">Awards</h2>
-                    <!--          &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-                    <ul class="edu">
-                        <li>
-                            <p class="text-small-margin">
-                                National Scholarship (TOP 2%), twice. Ministry of Education of the People's Republic of China.
+                                Yanbin Wei, Shuai Fu, <b><u>Weisen Jiang</u></b><sup>&#x1F4E7;</sup>, Zejian Zhang, Zhixiong Zeng, Qi Wu, James T. Kwok, Yu Zhang<br>
+                                NeurIPS 2024, Vancouver, Canada <br>
+                                <a href="https://openreview.net/forum?id=SaodQ13jga">OpenReview</a>
+                                | <a href="https://v-graph.github.io/">Project</a>
+                                | <a href="papers/nips2024b_poster.png">Poster</a>
                             </p>
-                        </li>
-                        <li>
-                            <p class="text-small-margin">
-                                Outstanding Staff with 5 stars (TOP 10%), twice. Tencent.
-                            </p>
-                        </li>
-                        <li>
-                            <p class="text-small-margin">
-                                <a href="https://saai.net.cn/3114.html">Shenzhen 3rd Excellent Science & Technology Academic Paper</a>, 2023
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!--End Awards and Honors-->
+                        </div>
 
-            <!--Start teaching-->
-            <div class="flex-row">
-                <div class="flex-item flex-column">
-                    <h2 class="add-top-margin">Teaching</h2>
-                    <!--          &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-                    <ul class="edu">
-                        <li>
-                            <p class="text-small-margin">
-                                COMP 2012 (Object-oriented programming and data structures), Teaching assistant. HKUST.
+
+                        <div class="paper">
+                            <p><a href="papers/eccv2024b.pdf"><b>MTMamba: Enhancing Multi-Task Dense Scene Understanding by Mamba-Based Decoders</b></a><br>
+                                Baijiong Lin, <b><u>Weisen Jiang</u></b>, Pengguang Chen, Yu Zhang, Shu Liu, Ying-Cong Chen <br>
+                                ECCV 2024, Milano, Italy<br>
+                                <a href="https://arxiv.org/abs/2407.02228">arXiv</a>
+                                | <a href="https://github.com/EnVision-Research/MTMamba">Code</a>
+                                | <a href="papers/eccv2024b_poster.pdf">Poster</a>
+                                | Follow-up work: <a href="https://arxiv.org/abs/2408.15101">MTMamba++</a>
                             </p>
-                        </li>
-                        <li>
-                            <p class="text-small-margin">
-                                COMP 4331 (Data mining), Teaching assistant. HKUST.
+                        </div>
+
+                        <div class="paper">
+                            <p><a href="papers/eccv2024a.pdf"><b>Learning Scalable Model Soup on a Single GPU: An Efficient Subspace Training Strategy</b></a><br>
+                                Tao Li<sup>&spades;</sup>, <b><u>Weisen Jiang</u></b><sup>&spades;</sup>, Fanghui Liu, Xiaolin Huang, James Kwok <br>
+                                ECCV 2024, Milano, Italy<br>
+                                <a href="https://arxiv.org/abs/2407.03641">arXiv</a>
+                                | <a href="https://github.com/nblt/MEHL-Soup">Code</a>
+                                | <a href="papers/eccv2024a_poster.jpg">Poster</a>
                             </p>
-                        </li>
-                    </ul>
+                        </div>
+
+                        <div class="paper selected">
+                            <p><a href="papers/acl2024.pdf"><b>Forward-Backward Reasoning in Large Language Models for Mathematical Verification</b></a><br>
+                                <b><u>Weisen Jiang</u></b>, Han Shi, Longhui Yu, Zhengying Liu, Yu Zhang, Zhenguo Li, James Kwok<br>
+                                Findings of ACL 2024, Bangkok, Thailand<br>
+                                <a href="https://arxiv.org/abs/2308.07758">arXiv</a>
+                                | <a href="https://github.com/ws-jiang/fobar-public">Code</a>
+                                | <a href="https://llm-fobar.github.io/">Project</a>
+                            </p>
+                        </div>
+
+                        <div class="paper selected">
+                            <p><a href="papers/iclr2024.pdf"><b>MetaMath: Bootstrap Your Own Mathematical Questions for Large Language Models</b></a><br>
+                                Longhui Yu<sup>&spades;</sup>, <b><u>Weisen Jiang</u></b><sup>&spades;</sup>, Han Shi, J. Yu, Z. Liu, Yu Zhang, James Kwok, Zhenguo Li, A. Weller, Weiyang Liu
+                                <br>
+                                ICLR 2024, <t style="color:MediumSeaGreen;"> Spotlight (acceptance rate 5%)</t>, Vienna, Austria<br>
+                                <a href="https://openreview.net/forum?id=N8N0hgNDRt">OpenReview</a>&nbsp;|&nbsp;
+                                <a href="https://github.com/meta-math/MetaMath">Code</a>&nbsp;|&nbsp;
+                                <a href="https://meta-math.github.io/">Project</a>&nbsp;|&nbsp;
+                                <a href="papers/iclr2024_poster.pdf">Poster</a>
+                            </p>
+                        </div>
+
+                        <div class="paper">
+                            <p><a href="papers/ecml2024.pdf"><b>Enhancing Sharpness-Aware Minimization by Learning Perturbation Radius</b></a><br>
+                                Xuehao Wang<sup>&spades;</sup>, <b><u>Weisen Jiang</u></b><sup>&spades;</sup>, Shuai Fu, and Yu Zhang <br>
+                                ECML 2024, Vilnius, Lithuania<br>
+                                <a href="https://arxiv.org/abs/2408.08222">arXiv</a>
+                            </p>
+                        </div>
+
+
+                        <div class="paper selected">
+                            <p><a href="papers/icml2023.pdf"><b>Effective Structured Prompting by Meta-Learning and Representative Verbalizer</b></a><br>
+                                 <b><u>Weisen Jiang</u></b>, Yu Zhang, James Kwok
+                                <br>
+                                ICML 2023, Honolulu, Hawaii, USA<br>
+                                <a href="https://openreview.net/forum?id=BLz4inIrHl">OpenReview</a>&nbsp;|&nbsp;
+                                <a href="https://drive.google.com/file/d/1TEbEJQOVIK2Zd78TXlYoehoQ7cVAgB_x/view?usp=sharing">Code</a>
+                                | <a href="papers/icml2023_poster.pdf">Poster</a>
+
+                            </p>
+                        </div>
+
+                        <div class="paper selected">
+                            <p><a href="papers/iclr2023.pdf"><b>An Adaptive Policy to Employ Sharpness-Aware Minimization</b></a><br>
+                                 <b><u>Weisen Jiang</u></b>, Hansi Yang, Yu Zhang, James Kwok
+                                <br>
+                                ICLR 2023, Kigali, Rwanda<br>
+                                <a href="https://openreview.net/forum?id=6Wl7-M2BC-">OpenReview</a>&nbsp;|&nbsp;
+                                <a href="https://drive.google.com/file/d/1TckN8KybYd8JjJpGI3iQ6_ZODhgdO3br/view?usp=sharing">Code</a>
+                                | <a href="papers/iclr2023_poster.pdf">Poster</a>
+                            </p>
+                        </div>
+
+                        <div class="paper selected">
+                            <p><a href="papers/icml2022.pdf"><b>Subspace Learning for Effective Meta-Learning</b></a><br>
+                                 <b><u>Weisen Jiang</u></b>, Yu Zhang, James Kwok
+                                <br>
+                                ICML 2022, Baltimore, Maryland, USA<br>
+                                <a href="https://proceedings.mlr.press/v162/jiang22b.html">OpenReview</a> |
+                                <a>Code</a>
+                                | <a href="papers/icml2022_poster.pdf">Poster</a>
+                            </p>
+                        </div>
+
+                        <div class="paper selected">
+                            <p><a href="papers/nips2021.pdf"><b>Effective Meta-Regularization by Kernelized Proximal Regularization</b></a><br>
+                                 <b><u>Weisen Jiang</u></b>, James Kwok, Yu Zhang
+                                <br>
+                                NeurIPS 2021, Virtual<br>
+                                <a href="https://openreview.net/forum?id=mekyxmlLJNd">OpenReview</a> |
+                                <a href="https://drive.google.com/file/d/1ZbIsaE0UdymVMwZHmgfjd5L4L2lw6hC-/view?usp=sharing">Code</a>
+                                | <a href="papers/nips2021_poster.pdf">Poster</a>
+                            </p>
+                        </div>
+
+                        <div class="paper">
+                            <p><a href="papers/ijcnn2021.pdf"><b>SEEN: Few-Shot Classification with SElf-ENsemble</b></a><br>
+                                 <b><u>Weisen Jiang</u></b>, James Kwok, Yu Zhang
+                                <br>
+                                IJCNN 2021, Virtual<br>
+                            </p>
+                        </div>
+
+                        <div class="paper">
+                            <p><a href="papers/ccc2014.pdf"><b>Identification for Wiener System with Discontinuous Piece-wise Linear Function via Sparse Optimization</b></a><br>
+                                 <b><u>Weisen Jiang</u></b>, Hai-Tao Fang
+                                <br>
+                                Chinese Control Conference (CCC) 2014<br>
+                            </p>
+                        </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
-            <!--End teaching-->
+            <div id="patents-section" class="content-section">
+                <div class="flex-row">
+                    <div class="flex-item flex-column">
+                        <!-- <h2 class="add-top-margin">Patents</h2> -->
+                        <div class="patents-list">
+                        <div class="paper">
+                            <p><a href="papers/patent2018.pdf"><b>信息推荐方法、装置、系统及存储介质</b></a><br>
+                                <b><u>江伟森</u></b>, 吴德龙, 邱泰生
+                                <br>
+                                腾讯科技有限公司<br>
+                                发明专利, 授权号: CN110413868B, 2023
+                            </p>
+                        </div>
+                         <div class="paper">
+                            <p><a href="papers/patent2019.pdf"><b>	一种页面生成方法及装置</b></a><br>
+                                <b><u>江伟森</u></b>, 骆顺昌, 吴德龙, 邱泰生
+                                <br>
+                                腾讯科技有限公司<br>
+                                发明专利, 授权号: CN112307319A, 2021
+                            </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="awards-section" class="content-section">
+                <div class="flex-row">
+                    <div class="flex-item flex-column">
+                        <h2 class="add-top-margin">Awards</h2>
+                        <ul class="edu">
+                            <li>
+                                <p class="text-small-margin">
+                                    National Scholarship (TOP 2%), twice. Ministry of Education of the People's Republic of China.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="text-small-margin">
+                                    Outstanding Staff with 5 stars (TOP 10%), twice. Tencent.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="text-small-margin">
+                                    <a href="https://saai.net.cn/3114.html">Shenzhen 3rd Excellent Science & Technology Academic Paper</a>, 2023
+                                </p>
+                            </li>
+                        </ul>
+
+                        
+                        <h2 class="add-top-margin">Academic Services</h2>
+                        <ul class="edu">
+                            <li>Journal Reviewer: TNNLS, AIJ, TPAMI</li>
+                            <li>(Senior) Program Committee for Conference: ICML/NeurIPS/ICLR, CVPR/ICCV, AAAI/IJCAI/KDD, AISTATS </li>
+                        </ul>
+                           
+                    </div>
+                </div>
+            </div>
+
+            <div id="teaching-section" class="content-section">
+                <div class="flex-row">
+                    <div class="flex-item flex-column">
+                        <!-- <h2 class="add-top-margin">Teaching</h2> -->
+                        <ul class="edu">
+                            <li>
+                                <p class="text-small-margin">
+                                    COMP 2012 (Object-oriented programming and data structures), Teaching assistant. HKUST.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="text-small-margin">
+                                    COMP 4331 (Data mining), Teaching assistant. HKUST.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
 
             <!--Start Software-->
 <!--            <div class="flex-row">-->
@@ -504,15 +558,7 @@
 
 
             <!--      Academic Services-->
-            <div class="flex-row">
-                <div class="flex-item flex-column">
-                    <h2 class="add-top-margin">Academic Services</h2>
-                    <ul class="edu">
-                        <li>Journal Reviewer: TNNLS, AIJ, TPAMI</li>
-                        <li>(Senior) Program Committee for Conference: ICML/NeurIPS/ICLR, CVPR/ICCV, AAAI/IJCAI/KDD, AISTATS </li>
-                    </ul>
-                </div>
-            </div>
+            
 
         </div>
     </div>
@@ -520,40 +566,55 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const toggleButtons = document.querySelectorAll('.publication-toggle');
+        const sectionButtons = document.querySelectorAll('.section-toggle');
+        const sections = document.querySelectorAll('.content-section');
+        const publicationButtons = document.querySelectorAll('.publication-toggle');
         const publicationsList = document.querySelector('#publications-list');
 
-        if (!toggleButtons.length || !publicationsList) {
-            return;
-        }
+        if (sectionButtons.length && sections.length) {
+            sectionButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    const target = button.dataset.target;
 
-        const papers = Array.from(publicationsList.querySelectorAll('.paper'));
+                    sectionButtons.forEach(function (btn) {
+                        btn.classList.remove('active');
+                    });
+                    button.classList.add('active');
 
-        function filterPublications(filter) {
-            papers.forEach(function (paper) {
-                const shouldShow = filter === 'all' || paper.classList.contains('selected');
-                paper.style.display = shouldShow ? '' : 'none';
-            });
-        }
-
-        // Initialize with the active button's filter
-        const activeButton = Array.from(toggleButtons).find(function (btn) {
-            return btn.classList.contains('active');
-        });
-        if (activeButton) {
-            filterPublications(activeButton.dataset.filter);
-        }
-
-        toggleButtons.forEach(function (button) {
-            button.addEventListener('click', function () {
-                toggleButtons.forEach(function (btn) {
-                    btn.classList.remove('active');
+                    sections.forEach(function (section) {
+                        section.classList.toggle('active', section.id === target);
+                    });
                 });
-
-                button.classList.add('active');
-                filterPublications(button.dataset.filter);
             });
-        });
+        }
+
+        if (publicationButtons.length && publicationsList) {
+            const papers = Array.from(publicationsList.querySelectorAll('.paper'));
+
+            function filterPublications(filter) {
+                papers.forEach(function (paper) {
+                    const shouldShow = filter === 'all' || paper.classList.contains('selected');
+                    paper.style.display = shouldShow ? '' : 'none';
+                });
+            }
+
+            const activeButton = Array.from(publicationButtons).find(function (btn) {
+                return btn.classList.contains('active');
+            });
+            if (activeButton) {
+                filterPublications(activeButton.dataset.filter);
+            }
+
+            publicationButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    publicationButtons.forEach(function (btn) {
+                        btn.classList.remove('active');
+                    });
+                    button.classList.add('active');
+                    filterPublications(button.dataset.filter);
+                });
+            });
+        }
     });
 </script>
 </body>
